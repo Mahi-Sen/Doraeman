@@ -38,8 +38,8 @@ MRAKBOTS = environ.get('MRAKBOTS', 'https://telegram.me/MrAK_BOTS')
 MYBOT = environ.get('MYBOT', 'https://telegram.me/MrAKLinkZbot')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://niyoyoh251:XwoLRWgZL6NFWFLM@cluster0.ea1ka.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = environ.get('DATABASE_NAME', "zgsvhsu")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
