@@ -14,14 +14,14 @@ def is_enabled(value, default):
 #---------------------------------------------------------------
 #---------------------------------------------------------------         ,
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+API_ID = int(environ.get('API_ID', '25776734'))
+API_HASH = environ.get('API_HASH', '9bb0c527d53d497506baf1bd17d7426c')
+BOT_TOKEN = environ.get('BOT_TOKEN', '7852887268:AAHdrY6UWiJcNEzrym1UQu7S_HBeglulZhs')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6072149828').split()]
-USERNAME = environ.get('USERNAME', "https://telegram.me/IamMrAK_bot") # ADMIN USERNAME
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002467628368').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6617823463').split()]
+USERNAME = environ.get('USERNAME', "https://telegram.me/Dev77_xD") # ADMIN USERNAME
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002037872585').split()]
 MICL = environ.get('MICL', 'https://telegram.me/MrAK_LinkZzz')
 BMICL = environ.get('BMICL', 'https://telegram.me/+P-oPdYbUDWIwNjI9')
 BMCL = environ.get('BMCL', 'https://telegram.me/+skgCIvzceP44NTM1')
@@ -44,19 +44,19 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #----------- There will be channel id add in all these ---------
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002376863024'))
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002400539974'))  
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002351777304'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002158259855'))
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002158259855'))  
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL','-1002158259855'))
 DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS','0'))
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002356116477'))
-auth_channel = environ.get('AUTH_CHANNEL', '-1002467628368')
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1001955218723'))
-request_channel = environ.get('REQUEST_CHANNEL', '-1002345928160')
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002044250842'))
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002158259855'))
+auth_channel = environ.get('AUTH_CHANNEL', '')
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002036256358'))
+request_channel = environ.get('REQUEST_CHANNEL', '-1002158259855')
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002158259855'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://telegram.me/MrAK_BOTS_Support_Group') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-IS_VERIFY = is_enabled('IS_VERIFY', True)
+IS_VERIFY = is_enabled('IS_VERIFY', False)
 #---------------------------------------------------------------
 TUTORIAL = environ.get("TUTORIAL", "https://telegram.me/HowToDownload_Tutorial_MrAK/3")
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg")
@@ -104,7 +104,7 @@ IMDB_TEMPLATE = environ.get('IMDB_TEMPLATE', f'{script.IMDB_TEMPLATE_TXT}')
 LONG_IMDB_DESCRIPTION = is_enabled('LONG_IMDB_DESCRIPTION', False)
 PROTECT_CONTENT = is_enabled('PROTECT_CONTENT', False)
 SPELL_CHECK = is_enabled('SPELL_CHECK', True)
-LINK_MODE = is_enabled('LINK_MODE', False)
+LINK_MODE = is_enabled('LINK_MODE', True)
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
