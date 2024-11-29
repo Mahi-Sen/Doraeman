@@ -14,11 +14,11 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyb
 async def broadcast_cancel(bot, query):
     _, ident = query.data.split("#")
     if ident == 'users':
-        await query.message.edit("ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴜsᴇʀs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...")
+        await query.message.edit("<b>ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴜsᴇʀs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...</b>")
         temp.USERS_CANCEL = True
     elif ident == 'groups':
         temp.GROUPS_CANCEL = True
-        await query.message.edit("ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ɢʀᴏᴜᴘs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...")
+        await query.message.edit("<b>ᴛʀʏɪɴɢ ᴛᴏ ᴄᴀɴᴄᴇʟ ɢʀᴏᴜᴘs ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ...</b>")
 
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 async def broadcast_users(bot, message):
@@ -39,7 +39,7 @@ async def broadcast_users(bot, message):
         time_taken = get_readable_time(time.time() - start_time)
         if temp.USERS_CANCEL:
             temp.USERS_CANCEL = False
-            await b_sts.edit(f"Users broadcast Cancelled!\nCompleted in {time_taken}\n\nTotal Users: <code>{total_users}</code>\nCompleted: <code>{done} / {total_users}</code>\nSuccess: <code>{success}</code>")
+            await b_sts.edit(f"ᴜꜱᴇʀꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ !\nᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ {time_taken}\n\nᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ: <code>{total_users}</code>\nᴄᴏᴍᴘʟᴇᴛᴇᴅ: <code>{done} / {total_users}</code>\nꜱᴜᴄᴄᴇꜱꜱ: <code>{success}</code>")
             return
         sts = await users_broadcast(int(user['id']), b_msg, is_pin)
         if sts == 'Success':
@@ -49,7 +49,7 @@ async def broadcast_users(bot, message):
         done += 1
         if not done % 20:
             btn = [[InlineKeyboardButton('CANCEL', callback_data=f'broadcast_cancel#users')]]
-            await b_sts.edit(f"Users broadcast in progress...\n\nTotal Users: <code>{total_users}</code>\nCompleted: <code>{done} / {total_users}</code>\nSuccess: <code>{success}</code>", reply_markup=InlineKeyboardMarkup(btn))
+            await b_sts.edit(f"ᴜꜱᴇʀꜱ ʙʀᴏᴀᴅᴄᴀꜱᴛ ɪɴ ᴘʀᴏɢʀᴇꜱꜱ...\n\nᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ: <code>{total_users}</code>\nᴄᴏᴍᴘʟᴇᴛᴇᴅ: <code>{done} / {total_users}</code>\nꜱᴜᴄᴄᴇꜱꜱ: <code>{success}</code>", reply_markup=InlineKeyboardMarkup(btn))
 
     await b_sts.edit(f"Users broadcast completed.\nCompleted in {time_taken}\n\nTotal Users: <code>{total_users}</code>\nCompleted: <code>{done} / {total_users}</code>\nSuccess: <code>{success}</code>")
 
