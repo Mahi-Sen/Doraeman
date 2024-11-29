@@ -36,11 +36,11 @@ AGL = environ.get('AGL', 'https://telegram.me/Radhe_Krishn_Movies')
 WCL = environ.get('WCL', 'https://telegram.me/Radhe_Krishn_Movies')
 TSCL = environ.get('TSCL', 'https://telegram.me/Radhe_Krishn_Movies')
 BMB = environ.get('BMB', 'https://https://telegram.me/Radhe_Krishn_Movies')
-MRAKBOTS = environ.get('MRAKBOTS', 'https://telegram.me/Radhe_Krishn_Movies')
+MRAKBOTS = environ.get('MRAKBOTS', 'https://telegram.me/Dev_TestRoBot')
 MYBOT = environ.get('MYBOT', 'https://telegram.me/Dev77_xD')
 
 #---------------------------------------------------------------
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://niyoyoh251:XwoLRWgZL6NFWFLM@cluster0.ea1ka.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://wehif99110:IRov87t5mR0h9pgS@cluster0.oxi51.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = environ.get('DATABASE_NAME', "zgsvhsu")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 #---------------------------------------------------------------
