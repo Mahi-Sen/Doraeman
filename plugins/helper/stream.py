@@ -9,9 +9,9 @@ import random
 
 @Client.on_message(filters.private & filters.command("streams"))
 async def stream_start(client, message):
-    msg = await client.ask(message.chat.id, "**Now send me your file/video to get stream and download link**")
+    msg = await client.ask(message.chat.id, "**ɴᴏᴡ ꜱᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ꜰɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ɢᴇᴛ ꜱᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ**")
     if not msg.media:
-        return await message.reply("**Please send me supported media.**")
+        return await message.reply("**ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴍᴇ ꜱᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴇᴅɪᴀ.**")
     if msg.media in [enums.MessageMediaType.VIDEO, enums.MessageMediaType.DOCUMENT]:
         file = getattr(msg, msg.media.value)
         filename = file.file_name
@@ -32,14 +32,14 @@ async def stream_start(client, message):
             text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=download),  # we download Link
-                                                InlineKeyboardButton('🖥️ Watch online 🖥️', url=stream)]])  # web stream Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⭐ ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ 🚀", url=download),  # we download Link
+                                                InlineKeyboardButton('🎥 ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ ⭐', url=stream)]])  # web stream Link
         )
         rm=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("sᴛʀᴇᴀᴍ 🖥", url=stream),
-                    InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 📥', url=download)
+                    InlineKeyboardButton("🖥 sᴛʀᴇᴀᴍ 🖥", url=stream),
+                    InlineKeyboardButton('📥 ᴅᴏᴡɴʟᴏᴀᴅ 📥', url=download)
                 ]
             ] 
         )
