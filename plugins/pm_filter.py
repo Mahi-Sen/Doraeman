@@ -1423,8 +1423,8 @@ async def auto_filter(client, msg, spoll=False , pm_mode = False):
         settings = await get_settings(chat_id , pm_mode=pm_mode)
         searching_animation_msg = await client.send_animation(
             chat_id=chat_id,
-            animation="https://envs.sh/TS2.mp4",  # Animation URL
-            caption=f'🔎 𝐒𝐄𝐀𝐑𝐂𝐇𝐈𝐍𝐆 {search} 𝐈𝐍 𝐌𝐘 𝐌𝐀𝐆𝐈𝐂 𝐏𝐎𝐂𝐊𝐄𝐓'
+            animation="https://envs.sh/YBM.mp4",  # Animation URL
+            caption=f'🔎 ꜱᴇᴀʀᴄʜɪɴɢ.... {search} ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ 𝟣𝟢 ꜱᴇᴄ'
         )
 	
         files, offset, total_results = await get_search_results(search)
