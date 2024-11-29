@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("fsub"))
 async def force_subscribe(client, message):
-    m = await message.reply_text("Wait im checking...")
+    m = await message.reply_text("**ᴡᴀɪᴛ ɪᴍ ᴄʜᴇᴄᴋɪɴɢ...**")
     if not message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await m.edit("This command is only for groups!")
     if not await is_check_admin(client, message.chat.id, message.from_user.id):
@@ -24,15 +24,15 @@ async def force_subscribe(client, message):
         return await m.edit("CHAT_ID isn't valid!")
     toFsub = int(toFsub)
     if toFsub == message.chat.id:
-        return await m.edit("It seems like you're attempting to enable force subscription for this chat ID. Please use a different chat ID !")
+        return await m.edit("ɪᴛ ꜱᴇᴇᴍꜱ ʟɪᴋᴇ ʏᴏᴜ'ʀᴇ ᴀᴛᴛᴇᴍᴘᴛɪɴɢ ᴛᴏ ᴇɴᴀʙʟᴇ ꜰᴏʀᴄᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ꜰᴏʀ ᴛʜɪꜱ ᴄʜᴀᴛ ɪᴅ. ᴘʟᴇᴀꜱᴇ ᴜꜱᴇ ᴀ ᴅɪꜰꜰᴇʀᴇɴᴛ ᴄʜᴀᴛ ɪᴅ !")
     if not await is_check_admin(client, toFsub, client.me.id):
-        return await m.edit("I need to be an admin in the given chat to perform this action!\nMake me admin in your Target chat and try again.")
+        return await m.edit("ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ɢɪᴠᴇɴ ᴄʜᴀᴛ ᴛᴏ ᴘᴇʀꜰᴏʀᴍ ᴛʜɪꜱ ᴀᴄᴛɪᴏɴ!\nᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.")
     try:
         await db.setFsub(grpID=message.chat.id, fsubID=toFsub)
         return await m.edit(f"Successfully added force subscribe to {toFsub} in {message.chat.title}")
     except Exception as e:
         logger.exception(e)
-        return await m.edit(f"Something went wrong ! Try again later or report in Support Group @MrAK_BOTS_Support_Group")
+        return await m.edit(f"ꜱᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ ! ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ ᴏʀ ʀᴇᴘᴏʀᴛ ɪɴ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ @Suport_Dev77_xD")
 
 @Client.on_message(filters.command("del_fsub"))
 async def del_force_subscribe(client, message):
@@ -43,7 +43,7 @@ async def del_force_subscribe(client, message):
         return await m.edit("Only group admins can use this command!")
     ifDeleted =await db.delFsub(message.chat.id)
     if ifDeleted:
-        return await m.edit(f"Successfully removed force subscribe for - {message.chat.title}\nTo add again use <code>/fsub YOUR_FSUB_CHAT_ID</code>")
+        return await m.edit(f"ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʀᴇᴍᴏᴠᴇᴅ ꜰᴏʀᴄᴇ ꜱᴜʙꜱᴄʀɪʙᴇ ꜰᴏʀ - {message.chat.title}\nᴛᴏ ᴀᴅᴅ ᴀɢᴀɪɴ ᴜꜱᴇ <code>/fsub YOUR_FSUB_CHAT_ID</code>")
     else:
         return await m.edit(f"Force subscribe not found in {message.chat.title}")
 
@@ -59,6 +59,6 @@ async def show_fsub(client, message):
     if fsub:
         #now gen a invite link
         invite_link = await client.export_chat_invite_link(fsub)
-        await m.edit(f"Force subscribe is set to {fsub}\n<a href={invite_link}>Channel Link Link</a>" ,disable_web_page_preview=True)
+        await m.edit(f"ꜰᴏʀᴄᴇ ꜱᴜʙꜱᴄʀɪʙᴇ ɪꜱ ꜱᴇᴛ ᴛᴏ {fsub}\n<a href={invite_link}>ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ ʟɪɴᴋ</a>" ,disable_web_page_preview=True)
     else:
-        await m.edit(f"Force subscribe is not set in {message.chat.title}")
+        await m.edit(f"ꜰᴏʀᴄᴇ ꜱᴜʙꜱᴄʀɪʙᴇ ɪꜱ ɴᴏᴛ ꜱᴇᴛ ɪɴ {message.chat.title}")
